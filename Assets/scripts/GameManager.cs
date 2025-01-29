@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // if (ball != null)
+        if (ball != null)
         {
             ball.Reset();
         }
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if (ball.transform.position.x > maxboundx || ball.transform.position.x < minboundx)
         {
-            if (transform.position.x > maxboundx) scoreP2++;
+            if (ball.transform.position.x > maxboundx) scoreP2++;
             else scoreP1++;
 
             ball.Reset();
