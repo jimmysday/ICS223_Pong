@@ -3,6 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     private Rigidbody rb;
+    private int speed=6;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -45,6 +46,6 @@ public class Ball : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         Vector3 movement = GetRandomBallDirection();
         Debug.Log(movement);
-        Launch(movement, 5);
+        Launch(movement, speed);
     }
 }
