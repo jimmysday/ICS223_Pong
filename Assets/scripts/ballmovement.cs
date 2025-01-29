@@ -3,6 +3,8 @@ using UnityEngine;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     private Rigidbody rb;
+    private int scoreP1 = 0;
+    private int scoreP2 = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,8 +14,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-       
+    {   // Check if the ball is offscreen to reset
+        if (transform.position.x > 12 || transform.position.x < -12)
+        {
+            if (transform.position.x > 12) scoreP2++;
+            else scoreP1++;
+
+            Reset();
+        }
+
     }
 
     Vector3 GetRandomBallDirection()
